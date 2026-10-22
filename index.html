@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24483a">
+  <meta name="description" content="Blumenpel: tradição de Blumenau e Pelotas em cucas, biscoitos, doces e produtos selecionados.">
+  <title>Blumenpel — Duas tradições, um só sabor</title>
+  <style>
+    :root{--green:#24483a;--green2:#365b49;--cream:#fbf5e9;--paper:#fffdf8;--wine:#7a343b;--gold:#c89b52;--ink:#282a25;--muted:#706f65;--line:#e9dfcf}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+    a{color:inherit}button,input,select{font:inherit}.wrap{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--green);color:#fff8ec;text-align:center;padding:9px 12px;font:12px Arial,sans-serif;letter-spacing:.07em}
+    header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 0}
+    .brand{font-size:31px;font-weight:bold;letter-spacing:.03em;color:var(--green);text-decoration:none}.brand span{color:var(--wine)}
+    .tagline{font:11px Arial,sans-serif;letter-spacing:.12em;color:var(--muted);display:block;margin-top:2px}
+    nav{display:flex;gap:22px;align-items:center;font:14px Arial,sans-serif}nav a{text-decoration:none}nav a:hover{color:var(--wine)}
+    .cartbtn,.btn{border:0;border-radius:999px;background:var(--wine);color:white;padding:12px 18px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font: bold 13px Arial,sans-serif}
+    .cartbtn{background:var(--green);white-space:nowrap}
+    .hero{padding:58px 0 52px;background:linear-gradient(110deg,rgba(31,61,48,.94),rgba(31,61,48,.74)),radial-gradient(circle at 80% 20%,#b78b50,#24483a);color:#fff8ec}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center}
+    .eyebrow{font:12px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#e6c991}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.04;margin:15px 0 20px;font-weight:normal;max-width:650px}
+    .hero p{font-size:18px;line-height:1.65;color:#f2e9d9;max-width:560px}
+    .hero .btn{background:var(--gold);color:#222;margin-top:10px}
+    .hero-art{min-height:300px;border:1px solid rgba(255,255,255,.28);border-radius:48% 48% 18px 18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;background:radial-gradient(ellipse at 50% 65%,#e2c18a 0%,#9c7048 28%,#375847 65%,#24483a 100%);box-shadow:inset 0 0 0 10px rgba(255,255,255,.04)}
+    .hero-art div{font-size:24px;line-height:1.4;color:#fff7e8;text-shadow:0 2px 8px #342a20}
+    .hero-art small{display:block;font:11px Arial,sans-serif;letter-spacing:.18em;margin-top:12px}
+    section{padding:54px 0}.section-head{text-align:center;margin-bottom:30px}.section-head .eyebrow{color:var(--wine)}h2{font-size:clamp(28px,3vw,40px);font-weight:normal;margin:10px 0 12px;color:var(--green)}.section-head p{color:var(--muted);line-height:1.6;margin:0 auto;max-width:650px}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.category{padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--paper);text-decoration:none;transition:transform .2s}.category:hover{transform:translateY(-3px)}.category .emoji{font-size:30px}.category h3{margin:12px 0 6px;color:var(--green);font-size:22px;font-weight:normal}.category p{font:14px/1.6 Arial,sans-serif;color:var(--muted);margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}.product-art{height:155px;display:flex;align-items:center;justify-content:center;font-size:58px;background:linear-gradient(135deg,#efe0c6,#f9f1e3)}.product-body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}.product-tag{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--wine)}.product h3{font-size:22px;font-weight:normal;margin:0;color:var(--green)}.product p{font:13px/1.5 Arial,sans-serif;color:var(--muted);margin:0;flex:1}.price{font:bold 18px Arial,sans-serif;color:var(--ink);margin:4px 0}.add{border:1px solid var(--green);background:transparent;color:var(--green);border-radius:999px;padding:10px;cursor:pointer;font:bold 12px Arial,sans-serif}.add:hover{background:var(--green);color:white}
+    .notice{font:12px/1.6 Arial,sans-serif;background:#f4e8d3;border:1px solid #e2cfad;color:#654e31;padding:12px 14px;border-radius:10px;margin:0 auto 22px;max-width:900px}
+    .story{background:#efe5d4}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.story-card{border-radius:18px;padding:32px;background:var(--green);color:#fff8ec}.story-card .big{font-size:42px}.story-card p{line-height:1.7;color:#e7e2d5}.story-copy p{line-height:1.8;color:#5f6057}.story-copy h2{text-align:left}
+    .contact{background:var(--paper)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.contact-box{border:1px solid var(--line);border-radius:16px;padding:25px}.contact-box p{line-height:1.7;color:var(--muted)}
+    footer{background:#1e392e;color:#e9e0d0;padding:28px 0;font:12px/1.7 Arial,sans-serif}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-brand{font: bold 24px Georgia,serif}
+    .cart-panel{position:fixed;right:0;top:0;height:100dvh;width:min(430px,100%);background:var(--paper);z-index:20;box-shadow:-10px 0 40px #0002;padding:22px;transform:translateX(105%);transition:transform .25s;display:flex;flex-direction:column}.cart-panel.open{transform:translateX(0)}.cart-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px}.cart-head h2{font-size:27px;margin:0}.close{border:0;background:transparent;font-size:26px;cursor:pointer}.cart-items{overflow:auto;flex:1;padding:12px 0}.cart-item{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px solid var(--line);padding:13px 0;font:14px Arial,sans-serif}.qty{display:flex;gap:8px;align-items:center;margin-top:7px}.qty button{border:1px solid var(--line);background:white;border-radius:6px;padding:3px 9px;cursor:pointer}.cart-bottom{border-top:1px solid var(--line);padding-top:16px}.total{display:flex;justify-content:space-between;font:bold 18px Arial,sans-serif;margin-bottom:14px}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:white;margin-bottom:9px;font:14px Arial,sans-serif}.checkout{width:100%;border:0;border-radius:999px;padding:14px;background:#277b48;color:white;font:bold 14px Arial,sans-serif;cursor:pointer}.empty{font:14px/1.6 Arial,sans-serif;color:var(--muted);padding:25px 0}.overlay{position:fixed;inset:0;background:#0006;z-index:19;display:none}.overlay.show{display:block}
+    @media(max-width:760px){.nav{flex-wrap:wrap}.brand{font-size:27px}nav{order:3;width:100%;justify-content:center;gap:15px;font-size:12px}.hero{padding:42px 0}.hero-grid,.story-grid,.contact-grid{grid-template-columns:1fr}.hero-art{min-height:210px}.categories{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-art{height:115px;font-size:43px}.product-body{padding:12px}.product h3{font-size:18px}.product p{font-size:12px}.add{font-size:11px}.cartbtn{padding:10px 13px}.hero p{font-size:16px}section{padding:42px 0}}
+    @media(max-width:390px){.products{grid-template-columns:1fr}.product-art{height:140px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">TRADIÇÃO, ACONCHEGO E SABORES DO SUL DO BRASIL</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Blumenpel início">blumen<span>pel</span><span class="tagline">DUAS TRADIÇÕES, UM SÓ SABOR</span></a>
+      <nav aria-label="Menu principal"><a href="#produtos">Produtos</a><a href="#historia">Nossa história</a><a href="#contato">Contato</a></nav>
+      <button class="cartbtn" id="openCart" aria-label="Abrir carrinho">Sacola <span id="cartCount">0</span></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Uma viagem de sabores</div>
+          <h1>O carinho de uma receita, a memória de um lugar.</h1>
+          <p>Da tradição alemã de Blumenau à doçaria de Pelotas, a Blumenpel reúne sabores que aproximam histórias, famílias e gerações.</p>
+          <a class="btn" href="#produtos">Conheça nossos sabores <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-label="Ilustração decorativa inspirada em produtos de padaria"><div>Feito para<br><strong>compartilhar</strong><small>BLUMENAU • PELOTAS</small></div></div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Escolha seu momento</div><h2>Sabores para cada ocasião</h2><p>Descubra nossos produtos artesanais e uma seleção especial de alimentos para deixar o dia mais gostoso.</p></div>
+        <div class="categories">
+          <a class="category" href="#produtos"><div class="emoji">🥨</div><h3>Tradição Blumenauense</h3><p>Cucas, biscoitos, pães e inspirações da mesa colonial.</p></a>
+          <a class="category" href="#produtos"><div class="emoji">🍬</div><h3>Doçaria Pelotense</h3><p>Doces, bolos e pequenos presentes cheios de afeto.</p></a>
+          <a class="category" href="#produtos"><div class="emoji">🧺</div><h3>Seleção Blumenpel</h3><p>Produtos de revenda escolhidos para completar sua mesa.</p></a>
+        </div>
+      </div>
+    </section>
+    <section id="produtos" style="background:#f5eddf">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Feito e escolhido com carinho</div><h2>Conheça nossos produtos</h2><p>Adicione os itens à sacola e envie seu pedido pelo WhatsApp.</p></div>
+        <div class="notice"><strong>Antes de publicar:</strong> os produtos e preços abaixo são exemplos demonstrativos. Troque-os por itens, valores, pesos, fotos e disponibilidade reais antes de aceitar pedidos.</div>
+        <div class="products" id="productGrid"></div>
+      </div>
+    </section>
+    <section id="historia" class="story">
+      <div class="wrap story-grid">
+        <div class="story-card"><div class="big">✦</div><div class="eyebrow">Nossa essência</div><h2 style="color:#fff8ec">Duas tradições, uma mesa.</h2><p>Blumenau e Pelotas têm histórias culinárias marcantes. A Blumenpel nasce para celebrar esse encontro com acolhimento, cuidado e respeito às receitas e aos produtores.</p></div>
+        <div class="story-copy"><div class="eyebrow">Nossa história</div><h2>Um pedacinho do Sul em cada escolha.</h2><p>A Blumenpel é uma padaria virtual e loja de produtos alimentícios inspirada na riqueza gastronômica de Santa Catarina e do Rio Grande do Sul. Queremos aproximar a cultura do café colonial, os sabores de família e a tradição doceira em uma experiência simples e especial.</p><p>À medida que a loja crescer, este espaço poderá contar a história real da fundadora, dos processos de produção e dos fornecedores parceiros.</p></div>
+      </div>
+    </section>
+    <section id="contato" class="contact">
+      <div class="wrap contact-grid">
+        <div><div class="eyebrow">Estamos por aqui</div><h2>Vamos conversar?</h2><p style="line-height:1.8;color:var(--muted)">Fale conosco para consultar disponibilidade, combinar a entrega ou tirar dúvidas sobre os produtos.</p><a class="btn" id="contactWhatsApp" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+        <div class="contact-box"><h3 style="font-size:23px;font-weight:normal;color:var(--green);margin-top:0">Informações da loja</h3><p><strong>Atendimento:</strong> mediante confirmação pelo WhatsApp.</p><p><strong>Entrega e retirada:</strong> consulte as opções disponíveis antes de finalizar o pedido.</p><p><strong>Alérgenos e conservação:</strong> confirme as informações específicas de cada produto conosco.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><div><div class="footer-brand">blumenpel</div><div>Duas tradições, um só sabor.</div></div><div>© <span id="year"></span> Blumenpel · Loja virtual em construção</div></div></footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Sacola de compras" aria-hidden="true">
+    <div class="cart-head"><h2>Sua sacola</h2><button class="close" id="closeCart" aria-label="Fechar sacola">×</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty">Sua sacola está vazia. Escolha alguns sabores para começar.</div></div>
+    <div class="cart-bottom">
+      <div class="total"><span>Subtotal</span><span id="cartTotal">R$ 0,00</span></div>
+      <input class="field" id="customerName" placeholder="Seu nome" autocomplete="name">
+      <select class="field" id="deliveryType" aria-label="Forma de recebimento"><option value="Consultar entrega">Consultar entrega</option><option value="Retirada">Retirada</option><option value="Entrega">Entrega</option></select>
+      <input class="field" id="customerAddress" placeholder="Endereço (se for entrega)">
+      <button class="checkout" id="checkout">Enviar pedido pelo WhatsApp</button>
+      <p style="font:11px/1.5 Arial,sans-serif;color:var(--muted)">O pedido só será confirmado após retorno da loja. Frete e pagamento serão combinados pelo WhatsApp.</p>
+    </div>
+  </aside>
+  <script>
+    // IMPORTANTE: preços e produtos abaixo são demonstrativos. Edite antes de publicar.
+    const WHATSAPP_NUMBER = "5553991169817"; // Brasil + DDD 53 + número informado
+    const products = [
+      {id:1,name:"Cuca artesanal",category:"Tradição Blumenauense",desc:"Exemplo de produto. Informe sabor, peso e ingredientes reais.",price:24.90,emoji:"🍰"},
+      {id:2,name:"Biscoitos caseiros",category:"Tradição Blumenauense",desc:"Exemplo de produto. Informe peso da embalagem e validade.",price:12.00,emoji:"🍪"},
+      {id:3,name:"Caixa de doces",category:"Doçaria Pelotense",desc:"Exemplo de produto. Descreva os doces e a quantidade da caixa.",price:28.00,emoji:"🍬"},
+      {id:4,name:"Bolo caseiro",category:"Doçaria Pelotense",desc:"Exemplo de produto. Informe tamanho, sabor e encomenda mínima.",price:32.00,emoji:"🍮"},
+      {id:5,name:"Café selecionado",category:"Seleção Blumenpel",desc:"Exemplo de revenda. Informe marca, peso e dados da embalagem.",price:18.90,emoji:"☕"},
+      {id:6,name:"Kit café da tarde",category:"Seleção Blumenpel",desc:"Exemplo de kit. Edite os itens que compõem a seleção.",price:39.90,emoji:"🧺"}
+    ];
+    const cart = {};
+    const money = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = products.map(p=>`<article class="product"><div class="product-art" aria-hidden="true">${p.emoji}</div><div class="product-body"><div class="product-tag">${p.category}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">Adicionar à sacola +</button></div></article>`).join("");
+    function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();openCart();}
+    function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart();}
+    function renderCart(){
+      const entries=Object.entries(cart).filter(([,q])=>q>0);
+      const count=entries.reduce((s,[,q])=>s+q,0);
+      const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===Number(id)).price*q,0);
+      document.getElementById("cartCount").textContent=count;
+      document.getElementById("cartTotal").textContent=money(total);
+      document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{const p=products.find(x=>x.id===Number(id));return `<div class="cart-item"><div><strong>${p.name}</strong><div style="margin-top:5px;color:#706f65">${money(p.price)} cada</div><div class="qty"><button aria-label="Diminuir ${p.name}" onclick="changeQty(${p.id},-1)">−</button><span>${q}</span><button aria-label="Aumentar ${p.name}" onclick="changeQty(${p.id},1)">+</button></div></div><strong>${money(p.price*q)}</strong></div>`}).join(""):'<div class="empty">Sua sacola está vazia. Escolha alguns sabores para começar.</div>';
+    }
+    const panel=document.getElementById("cartPanel"),overlay=document.getElementById("overlay");
+    function openCart(){panel.classList.add("open");overlay.classList.add("show");panel.setAttribute("aria-hidden","false");}
+    function closeCart(){panel.classList.remove("open");overlay.classList.remove("show");panel.setAttribute("aria-hidden","true");}
+    document.getElementById("openCart").addEventListener("click",openCart);
+    document.getElementById("closeCart").addEventListener("click",closeCart);
+    overlay.addEventListener("click",closeCart);
+    document.getElementById("checkout").addEventListener("click",()=>{
+      const entries=Object.entries(cart).filter(([,q])=>q>0);
+      if(!entries.length){alert("Adicione ao menos um produto à sacola.");return;}
+      const name=document.getElementById("customerName").value.trim();
+      const delivery=document.getElementById("deliveryType").value;
+      const address=document.getElementById("customerAddress").value.trim();
+      if(!name){alert("Informe seu nome para enviar o pedido.");document.getElementById("customerName").focus();return;}
+      if(delivery==="Entrega"&&!address){alert("Informe o endereço para consultar a entrega.");document.getElementById("customerAddress").focus();return;}
+      const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===Number(id)).price*q,0);
+      let msg=`Olá! Quero fazer um pedido na Blumenpel.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Recebimento:* ${encodeURIComponent(delivery)}${address?`%0A*Endereço:* ${encodeURIComponent(address)}`:""}%0A%0A*Itens:*%0A`;
+      entries.forEach(([id,q])=>{const p=products.find(x=>x.id===Number(id));msg+=`• ${encodeURIComponent(p.name)} x${q} — ${encodeURIComponent(money(p.price*q))}%0A`;});
+      msg+=`%0A*Subtotal demonstrativo:* ${encodeURIComponent(money(total))}%0A%0ASei que os valores e a disponibilidade precisam ser confirmados pela loja. Por favor, confirmem o total, frete e forma de pagamento.`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank","noopener");
+    });
+    document.getElementById("contactWhatsApp").href=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de informações sobre a Blumenpel.")}`;
+    document.getElementById("year").textContent=new Date().getFullYear();
+    renderCart();
+  </script>
+</body>
+</html>
